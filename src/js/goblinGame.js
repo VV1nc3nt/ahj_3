@@ -1,8 +1,11 @@
-import AddGoblin from "./addGoblin";
+/* eslint-disable no-restricted-globals */
+/* eslint-disable no-alert */
+import AddGoblin from './addGoblin';
 
 export default class GoblinGame {
   constructor(elements) {
     if (typeof elements === 'string') {
+      // eslint-disable-next-line no-param-reassign
       elements = document.querySelectorAll(elements);
     }
 
@@ -14,9 +17,11 @@ export default class GoblinGame {
     this.addGoblin = new AddGoblin();
     this.goblinClick = this.goblinClick.bind(this);
 
+    // eslint-disable-next-line no-underscore-dangle
     this._elements = elements;
 
-    this._elements.forEach(element => element.addEventListener('click', this.goblinClick));
+    // eslint-disable-next-line no-underscore-dangle
+    this._elements.forEach((element) => element.addEventListener('click', this.goblinClick));
   }
 
   goblinTransference() {
@@ -25,7 +30,7 @@ export default class GoblinGame {
       this.lose += 1;
       this.showScore();
       this.goblinLose();
-    },1000)
+    }, 1000);
   }
 
   goblinClick(e) {
@@ -42,14 +47,14 @@ export default class GoblinGame {
   }
 
   goblinWin() {
-    if (this.win == 5) {
+    if (this.win === 5) {
       alert('You Win!');
       location.reload();
     }
   }
 
   goblinLose() {
-    if (this.lose == 5) {
+    if (this.lose === 5) {
       alert('You Lose!');
       location.reload();
     }
