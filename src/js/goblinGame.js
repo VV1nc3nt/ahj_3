@@ -36,11 +36,6 @@ export default class GoblinGame {
   goblinClick(e) {
     if (e.currentTarget.hasChildNodes()) {
       this.win += 1;
-      if (this.lose === 0) {
-        this.lose = 0;
-      } else {
-        this.lose -= 1;
-      }
       this.addGoblin.changeGoblinPosition();
       this.showScore();
       this.goblinWin();
