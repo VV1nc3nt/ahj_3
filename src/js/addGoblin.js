@@ -3,7 +3,7 @@
 export default class AddGoblin {
   constructor() {
     this.gameCells = document.querySelectorAll('.game_cell');
-    this.goblin = '/assets/img/goblin.png';
+    this.goblin = './assets/img/goblin.png';
   }
 
   addGoblin() {
