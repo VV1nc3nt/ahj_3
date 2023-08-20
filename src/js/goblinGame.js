@@ -30,12 +30,17 @@ export default class GoblinGame {
       this.lose += 1;
       this.showScore();
       this.goblinLose();
-    }, 1000);
+    }, 2000);
   }
 
   goblinClick(e) {
     if (e.currentTarget.hasChildNodes()) {
       this.win += 1;
+      if (this.lose === 0) {
+        this.lose = 0;
+      } else {
+        this.lose -= 1;
+      }
       this.addGoblin.changeGoblinPosition();
       this.showScore();
       this.goblinWin();
