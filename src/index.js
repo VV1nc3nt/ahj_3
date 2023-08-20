@@ -3,4 +3,4 @@
 /* eslint-disable semi */
 import './js/app'
 import './css/style.css';
-import img from './assets/img/goblin.png'
+import goblin from '../assets/img/goblin.png'
